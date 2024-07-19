@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Roboto';
+  src:
+    url(./Roboto-Regular.woff) format('woff'),
+    url(./Roboto-Regular.woff2) format('woff2');
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src:
+    url(./Roboto-Medium.woff) format('woff'),
+    url(./Roboto-Medium.woff2) format('woff2');
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

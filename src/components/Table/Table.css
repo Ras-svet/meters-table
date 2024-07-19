@@ -1,0 +1,133 @@
+.table {
+  max-height: 896px;
+  overflow-y: auto;
+  border: 1px solid #e0e5eb;
+  border-radius: 12px;
+  width: 1406.4px;
+}
+
+.table__container {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+}
+
+.table__container thead {
+  position: sticky;
+  top: 0;
+  background-color: #f0f3f7;
+  z-index: 1;
+}
+
+.table__container thead th {
+  min-width: 40px;
+}
+
+.table__container tbody tr {
+  margin: 0;
+  padding: 6px 0;
+  border-bottom: 1px solid #e0e5eb;
+}
+
+.table__container tbody tr td {
+  padding: 16px 0 15.6px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #1d2432;
+  /* margin-bottom: 10px; */
+}
+
+.table__container tbody tr td:first-of-type {
+  color: #5e6674;
+  padding-left: 20px;
+}
+
+.table__container th {
+  padding: 0;
+  padding: 8px 0 8px 12px;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #697180;
+  text-align: start;
+}
+
+.table__container th:first-of-type {
+  padding-left: 17px;
+}
+
+.table__container tbody tr:hover {
+  background-color: #f7f8f9;
+}
+
+.table__container tbody tr {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.pagination {
+  padding: 8px 16px 8px 0;
+  width: 100%;
+  z-index: 100;
+  width: 1408px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: end;
+}
+
+.pagination__button,
+.pagination__ellipsis {
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ced5de;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #1f2939;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 8px 12px;
+}
+
+.pagination__button:hover {
+  cursor: pointer;
+  background-color: #f2f5f8;
+}
+
+.active {
+  background-color: #f2f5f8;
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item__button {
+  display: none;
+  background-image: url('../../images/trash.svg');
+  padding: 11px 0;
+  background-color: #fee3e3;
+  border-radius: 8px;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  height: 40px;
+  width: 40px;
+}
+
+.item__button:hover {
+  cursor: pointer;
+  background-color: #fed7d7;
+}
+
+tr:hover .item__button {
+  display: inline-block;
+}

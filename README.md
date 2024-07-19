@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Тестовое задание на позицию Frontend-разработчик
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Задание
 
-## Available Scripts
+Создать приложение для отображения списка счётчиков горячей и холодной воды.
 
-In the project directory, you can run:
+### Дизайн
 
-### `npm start`
+Дизайн можно посмотреть по [ссылке на Figma](https://www.figma.com/design/gxVXNv5MEY8RQ1KXRVvkUT/%D0%A2%D0%B5%D1%81%D1%82-(%D1%84%D1%80%D0%BE%D0%BD%D1%82)?node-id=0-1&t=QQ9ijj1biJPPjj7s-0).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Функциональные требования
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Список счётчиков**
 
-### `npm test`
+   - Получать данные по запросу GET `http://showroom.eis24.me/api/v4/test/meters/` с параметрами `limit=20` и `offset` (выводить по 20 на страницу).
+   - Данные должны отображаться на странице с внутренним скроллом (шапка фиксированная, таблица скроллится внутри).
+   - Колонки:
+     1. Порядковый номер.
+     2. Тип (ColdWaterAreaMeter — ХВС, HotWaterAreaMeter — ГВС).
+     3. Дата установки в формате `дд.мм.гггг`.
+     4. Автоматический ли он (is_automatic).
+     5. Значение (initial_values).
+     6. Адрес.
+     7. Примечание (description).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Адрес счётчика**
 
-### `npm run build`
+   - Адреса получать параллельным запросом GET `http://showroom.eis24.me/api/v4/test/areas/` с параметром списка айди `id__in`.
+   - Продумать оптимизацию, не запрашивать уже известные адреса.
+   - Выводить улицу, дом, номер квартиры.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Удаление счётчика**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   - При наведении на строку должна появляться кнопка удаления, инициирующая удаление счётчика (DELETE `http://showroom.eis24.me/api/v4/test/meters/:meterId/`).
+   - На странице всегда должно оставаться 20 элементов.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Стек технологий
 
-### `npm run eject`
+- **React**: Библиотека для построения пользовательского интерфейса.
+- **TypeScript**: Язык программирования для обеспечения статической типизации.
+- **mobx-state-tree**: Библиотека для управления состоянием в приложении.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Конфигурация Prettier
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```json
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 80
+}
