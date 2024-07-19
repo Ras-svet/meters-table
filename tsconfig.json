@@ -1,20 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "target": "es5",                           // Целевой стандарт ECMAScript
+    "lib": ["dom", "dom.iterable", "esnext"], // Библиотеки для использования в проекте
+    "allowJs": true,                          // Разрешить компиляцию JavaScript файлов
+    "skipLibCheck": true,                     // Пропустить проверку типов в файлах .d.ts
+    "esModuleInterop": true,                  // Поддержка импортов CommonJS
+    "allowSyntheticDefaultImports": true,     // Разрешить импорт по умолчанию
+    "strict": true,                           // Включить строгий режим
+    "forceConsistentCasingInFileNames": true, // Поддержка консистентного использования регистров в именах файлов
+    "module": "esnext",                       // Система модулей
+    "moduleResolution": "node",               // Разрешение модулей по Node.js
+    "resolveJsonModule": true,                // Разрешить импорт JSON модулей
+    "isolatedModules": true,                  // Изолированное компилирование модулей
+    "jsx": "react-jsx",                       // Поддержка JSX с React 17 и новее
+    "baseUrl": "./",                          // Базовая директория для абсолютных путей
+    "paths": {
+      "@components/*": ["src/components/*"], // Настройки для путей
+      "@stores/*": ["src/stores/*"],
+      "@models/*": ["src/models/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src"], // Указывает, какие файлы следует включить в компиляцию
+  "exclude": ["node_modules", "build"] // Указывает, какие файлы и папки следует исключить
 }
